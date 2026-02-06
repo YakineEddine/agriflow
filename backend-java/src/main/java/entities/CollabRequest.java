@@ -1,4 +1,4 @@
-package tn.esprit.agriflow.collab;
+package entities;
 
 import java.time.LocalDate;
 

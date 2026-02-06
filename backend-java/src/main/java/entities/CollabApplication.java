@@ -1,4 +1,4 @@
-package tn.esprit.agriflow.collab;
+package entities;
 
 public class CollabApplication {
     private long id;

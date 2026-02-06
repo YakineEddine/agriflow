@@ -1,17 +1,27 @@
-package tn.esprit.agriflow.collab;
+package tests;
+
+import entities.CollabRequest;
+import entities.CollabApplication;
+import services.CollabRequestService;
+import services.CollabApplicationService;
 
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class CollabConsoleApp {
-    private final CollabRequestDAO requestDAO = new CollabRequestDAO();
-    private final CollabApplicationDAO applicationDAO = new CollabApplicationDAO();
+public class Main {
+    private final CollabRequestService requestService = new CollabRequestService();
+    private final CollabApplicationService applicationService = new CollabApplicationService();
     private final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        Main app = new Main();
+        app.run();
+    }
 
     public void run() {
         System.out.println("╔═══════════════════════════════════════════════════╗");
         System.out.println("║   AGRIFLOW - MODULE COLLABORATIONS (JDBC CRUD)   ║");
-        System.out.println("║            Membre 5 - Séance 3                   ║");
+        System.out.println("║     Architecture 3-tiers professionnelle         ║");
         System.out.println("╚═══════════════════════════════════════════════════╝\n");
 
         while (true) {
@@ -90,13 +100,13 @@ public class CollabConsoleApp {
         scanner.nextLine();
 
         CollabRequest req = new CollabRequest(requesterId, title, description, startDate, endDate, neededPeople, "PENDING");
-        long id = requestDAO.add(req);
+        long id = requestService.add(req);
         System.out.println("✅ Demande créée avec ID = " + id);
     }
 
     private void listRequests() throws Exception {
         System.out.println("\n--- LISTE DES DEMANDES ---");
-        requestDAO.findAll().forEach(System.out::println);
+        requestService.findAll().forEach(System.out::println);
     }
 
     private void updateRequestStatus() throws Exception {
@@ -107,7 +117,7 @@ public class CollabConsoleApp {
         System.out.print("Nouveau statut (PENDING/APPROVED/REJECTED/CLOSED) : ");
         String status = scanner.nextLine();
 
-        requestDAO.updateStatus(id, status);
+        requestService.updateStatus(id, status);
         System.out.println("✅ Demande mise à jour.");
     }
 
@@ -116,7 +126,7 @@ public class CollabConsoleApp {
         long id = scanner.nextLong();
         scanner.nextLine();
 
-        requestDAO.delete(id);
+        requestService.delete(id);
         System.out.println("✅ Demande supprimée.");
     }
 
@@ -133,7 +143,7 @@ public class CollabConsoleApp {
         String message = scanner.nextLine();
 
         CollabApplication app = new CollabApplication(requestId, candidateId, message, "PENDING");
-        long id = applicationDAO.add(app);
+        long id = applicationService.add(app);
         System.out.println("✅ Candidature créée avec ID = " + id);
     }
 
@@ -143,7 +153,7 @@ public class CollabConsoleApp {
         scanner.nextLine();
 
         System.out.println("\n--- CANDIDATURES pour demande " + requestId + " ---");
-        applicationDAO.findByRequestId(requestId).forEach(System.out::println);
+        applicationService.findByRequestId(requestId).forEach(System.out::println);
     }
 
     private void updateApplicationStatus() throws Exception {
@@ -154,7 +164,7 @@ public class CollabConsoleApp {
         System.out.print("Nouveau statut (PENDING/APPROVED/REJECTED) : ");
         String status = scanner.nextLine();
 
-        applicationDAO.updateStatus(id, status);
+        applicationService.updateStatus(id, status);
         System.out.println("✅ Candidature mise à jour.");
     }
 
@@ -163,7 +173,7 @@ public class CollabConsoleApp {
         long id = scanner.nextLong();
         scanner.nextLine();
 
-        applicationDAO.delete(id);
+        applicationService.delete(id);
         System.out.println("✅ Candidature supprimée.");
     }
 }
