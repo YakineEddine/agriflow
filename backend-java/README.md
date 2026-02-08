@@ -58,3 +58,53 @@ src/main/java/tn/esprit/agriflow/
 ## Auteur
 **Membre 5** - Module Collaborations (recherche partenaires)  
 PIDEV 2026 - ESPRIT
+
+---
+
+## 🤝 Contribution au projet collaboratif
+
+Ce module est prêt à être intégré au repository partagé **MaatougAyoub/AgriFlow**.
+
+### Fichiers de contribution préparés
+- ✅ `CONTRIBUTING.md` : Guide de contribution détaillé
+- ✅ `src/main/resources/module5-schema.sql` : Script SQL standalone
+- ✅ Architecture 3-tiers conforme aux standards du projet
+- ✅ Documentation complète (README + commentaires code)
+
+### Pour contribuer
+1. Lire le guide : [CONTRIBUTING.md](./CONTRIBUTING.md)
+2. Suivre les étapes de clonage et branche feature
+3. Copier le module vers le repo partagé
+4. Créer une Pull Request
+
+### Statut
+- **Repository personnel** : `YakineEddine/agriflow` (backup + portfolio)
+- **Repository collaboratif** : `MaatougAyoub/AgriFlow` (intégration équipe)
+- **Branche de contribution** : `feature/module5-collaborations` (à créer)
+
+### Commandes Git de contribution
+```bash
+# Cloner le repo partagé
+git clone https://github.com/MaatougAyoub/AgriFlow.git AgriFlow-Team
+cd AgriFlow-Team
+
+# Créer branche feature
+git checkout -b feature/module5-collaborations
+
+# [Copier le code manuellement]
+
+# Commit et push
+git add backend-java/Module5-Collaborations/
+git commit -m "feat(module5): Add Collaborations module"
+git push -u origin feature/module5-collaborations
+
+# Créer PR sur GitHub
+```
+
+### Checklist avant PR
+- [ ] Code compile sans erreur (`mvn clean compile`)
+- [ ] Tests manuels passent (console app)
+- [ ] Script SQL testé dans phpMyAdmin
+- [ ] Documentation à jour (README + CONTRIBUTING)
+- [ ] Pas de données sensibles (mots de passe, tokens)
+- [ ] Structure conforme au repo partagé
