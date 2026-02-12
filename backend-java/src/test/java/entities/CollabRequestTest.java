@@ -42,7 +42,7 @@ class CollabRequestTest {
         assertEquals(startDate, req.getStartDate());
         assertEquals(endDate, req.getEndDate());
         assertEquals(neededPeople, req.getNeededPeople());
-        assertEquals("PENDING", req.getStatus());
+        assertEquals(status, req.getStatus());
     }
     
     @Test
