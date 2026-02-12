@@ -74,5 +74,8 @@ class CollabRequestTest {
         
         // Assert
         assertNotNull(result);
+        assertTrue(result.contains("1"));
+        assertTrue(result.contains("Récolte olives"));
+        assertTrue(result.contains("2"));
     }
 }
