@@ -39,6 +39,8 @@ class CollabRequestTest {
         assertEquals(requesterId, req.getRequesterId());
         assertEquals(title, req.getTitle());
         assertEquals(description, req.getDescription());
+        assertEquals(startDate, req.getStartDate());
+        assertEquals(endDate, req.getEndDate());
         assertEquals(neededPeople, req.getNeededPeople());
         assertEquals("PENDING", req.getStatus());
     }
@@ -46,10 +48,17 @@ class CollabRequestTest {
     @Test
     @DisplayName("Test setters et getters")
     void testSettersAndGetters() {
+        // Arrange
+        LocalDate testStartDate = LocalDate.now().plusDays(5);
+        LocalDate testEndDate = LocalDate.now().plusDays(10);
+        
         // Act
         request.setId(1L);
         request.setRequesterId(5);
         request.setTitle("Test Title");
+        request.setDescription("Test Description");
+        request.setStartDate(testStartDate);
+        request.setEndDate(testEndDate);
         request.setNeededPeople(3);
         request.setStatus("APPROVED");
         
@@ -57,6 +66,9 @@ class CollabRequestTest {
         assertEquals(1L, request.getId());
         assertEquals(5, request.getRequesterId());
         assertEquals("Test Title", request.getTitle());
+        assertEquals("Test Description", request.getDescription());
+        assertEquals(testStartDate, request.getStartDate());
+        assertEquals(testEndDate, request.getEndDate());
         assertEquals(3, request.getNeededPeople());
         assertEquals("APPROVED", request.getStatus());
     }
