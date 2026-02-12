@@ -34,10 +34,11 @@ public class CollabRequestValidator {
         if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("Le titre est obligatoire");
         }
-        if (title.trim().length() < 5) {
+        String trimmedTitle = title.trim();
+        if (trimmedTitle.length() < 5) {
             throw new IllegalArgumentException("Le titre doit contenir au moins 5 caractères");
         }
-        if (title.trim().length() > 150) {
+        if (trimmedTitle.length() > 150) {
             throw new IllegalArgumentException("Le titre ne peut pas dépasser 150 caractères");
         }
     }

@@ -48,10 +48,11 @@ public class CollabApplicationValidator {
      */
     public static void validateMessage(String message) {
         if (message != null && !message.trim().isEmpty()) {
-            if (message.trim().length() < 10) {
+            String trimmedMessage = message.trim();
+            if (trimmedMessage.length() < 10) {
                 throw new IllegalArgumentException("Le message doit contenir au moins 10 caractères");
             }
-            if (message.trim().length() > 255) {
+            if (trimmedMessage.length() > 255) {
                 throw new IllegalArgumentException("Le message ne peut pas dépasser 255 caractères");
             }
         }
