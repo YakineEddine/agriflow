@@ -34,10 +34,10 @@ public class CollabRequestValidator {
         if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("Le titre est obligatoire");
         }
-        if (title.length() < 5) {
+        if (title.trim().length() < 5) {
             throw new IllegalArgumentException("Le titre doit contenir au moins 5 caractères");
         }
-        if (title.length() > 150) {
+        if (title.trim().length() > 150) {
             throw new IllegalArgumentException("Le titre ne peut pas dépasser 150 caractères");
         }
     }
@@ -67,11 +67,11 @@ public class CollabRequestValidator {
         }
         
         LocalDate today = LocalDate.now();
-        if (startDate.isBefore(today)) {
+        if (startDate.isBefore(today) || startDate.isEqual(today)) {
             throw new IllegalArgumentException("La date de début doit être dans le futur");
         }
         
-        if (endDate.isBefore(startDate)) {
+        if (endDate.isBefore(startDate) || endDate.isEqual(startDate)) {
             throw new IllegalArgumentException("La date de fin doit être après la date de début");
         }
     }

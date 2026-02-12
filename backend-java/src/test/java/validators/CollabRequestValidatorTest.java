@@ -92,9 +92,27 @@ class CollabRequestValidatorTest {
     }
 
     @Test
+    void testValidateDates_TodayStartDate() {
+        LocalDate startDate = LocalDate.now();
+        LocalDate endDate = LocalDate.now().plusDays(10);
+        Exception exception = assertThrows(IllegalArgumentException.class, 
+            () -> CollabRequestValidator.validateDates(startDate, endDate));
+        assertEquals("La date de début doit être dans le futur", exception.getMessage());
+    }
+
+    @Test
     void testValidateDates_EndBeforeStart() {
         LocalDate startDate = LocalDate.now().plusDays(10);
         LocalDate endDate = LocalDate.now().plusDays(5);
+        Exception exception = assertThrows(IllegalArgumentException.class, 
+            () -> CollabRequestValidator.validateDates(startDate, endDate));
+        assertEquals("La date de fin doit être après la date de début", exception.getMessage());
+    }
+
+    @Test
+    void testValidateDates_EndEqualsStart() {
+        LocalDate startDate = LocalDate.now().plusDays(10);
+        LocalDate endDate = LocalDate.now().plusDays(10);
         Exception exception = assertThrows(IllegalArgumentException.class, 
             () -> CollabRequestValidator.validateDates(startDate, endDate));
         assertEquals("La date de fin doit être après la date de début", exception.getMessage());

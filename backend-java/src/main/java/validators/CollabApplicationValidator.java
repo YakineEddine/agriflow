@@ -51,7 +51,7 @@ public class CollabApplicationValidator {
             if (message.trim().length() < 10) {
                 throw new IllegalArgumentException("Le message doit contenir au moins 10 caractères");
             }
-            if (message.length() > 255) {
+            if (message.trim().length() > 255) {
                 throw new IllegalArgumentException("Le message ne peut pas dépasser 255 caractères");
             }
         }
