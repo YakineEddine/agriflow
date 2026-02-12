@@ -48,7 +48,7 @@ public class CollabRequestValidator {
      * - Max 500 caractères
      */
     public static void validateDescription(String description) {
-        if (description != null && description.length() > 500) {
+        if (description != null && description.trim().length() > 500) {
             throw new IllegalArgumentException("La description ne peut pas dépasser 500 caractères");
         }
     }
