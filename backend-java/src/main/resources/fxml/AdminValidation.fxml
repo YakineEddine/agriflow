@@ -42,7 +42,7 @@
                 
                 <HBox spacing="15" alignment="CENTER_LEFT">
                     <ComboBox fx:id="filterCombo" prefWidth="250" style="-fx-font-size: 14px;"/>
-                    <Button text="Contenu créés" styleClass="btn-secondary"/>
+                    <Button text="Contenus créés" styleClass="btn-secondary"/>
                 </HBox>
             </VBox>
             
