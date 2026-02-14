@@ -30,8 +30,8 @@
                 <VBox styleClass="card" spacing="20" maxWidth="700" prefWidth="700">
                     
                     <VBox spacing="5">
-                        <Text text="Publish à a Request" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
-                        <Text text="(from officedemandeur)" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
+                        <Text text="Publier une demande" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+                        <Text text="(Nouvelle demande de collaboration)" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
                     </VBox>
                     
                     <Separator/>
@@ -49,7 +49,7 @@
                         <!-- Lieu -->
                         <VBox spacing="8">
                             <Label text="Lieu" style="-fx-font-weight: bold;"/>
-                            <TextField fx:id="locationField" promptText="Informations" 
+                            <TextField fx:id="locationField" promptText="Ex: Sidi Bousid, Sfax" 
                                       style="-fx-font-size: 14px; -fx-padding: 10;"/>
                         </VBox>
                         

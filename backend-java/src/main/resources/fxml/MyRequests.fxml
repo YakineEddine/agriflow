@@ -26,8 +26,8 @@
         <VBox spacing="20" style="-fx-padding: 40;">
             
             <VBox spacing="5">
-                <Text text="My Requests" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
-                <Text text="(from officelister)" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
+                <Text text="Mes Demandes" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+                <Text text="(Demandes de collaboration publiées)" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
             </VBox>
             
             <!-- Card avec liste des demandes -->
@@ -59,7 +59,7 @@
                               style="-fx-padding: 10; -fx-background-color: #F9F9F9; -fx-background-radius: 8;">
                             <VBox spacing="3" HBox.hgrow="ALWAYS">
                                 <Text text="👤 Abdellsif Zelss" style="-fx-font-weight: bold;"/>
-                                <Text text="1re registre" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
+                                <Text text="Première inscription" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
                             </VBox>
                             <Label text="REJETÉE" styleClass="badge badge-rejected"/>
                         </HBox>
@@ -90,7 +90,7 @@
                 <HBox spacing="15" alignment="CENTER_LEFT" 
                       style="-fx-padding: 15; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1 0;">
                     <VBox spacing="5" HBox.hgrow="ALWAYS">
-                        <Text text="Faissage des arbres" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        <Text text="Taille des arbres" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
                         <Text text="📅 En attente de validation" style="-fx-fill: #757575;"/>
                     </VBox>
                     <Label text="EN ATTENTE" styleClass="badge badge-pending"/>

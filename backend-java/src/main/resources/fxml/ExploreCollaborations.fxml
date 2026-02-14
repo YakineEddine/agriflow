@@ -33,7 +33,7 @@
             <VBox spacing="10">
                 <HBox alignment="CENTER_LEFT" spacing="10">
                     <Text text="Explore Collaborations" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
-                    <Text text="(from office fermiers)" style="-fx-font-size: 14px; -fx-fill: #757575;"/>
+                    <Text text="(Demandes disponibles)" style="-fx-font-size: 14px; -fx-fill: #757575;"/>
                 </HBox>
                 
                 <!-- Filtres -->

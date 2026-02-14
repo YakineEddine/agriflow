@@ -26,8 +26,8 @@
         <VBox spacing="20" style="-fx-padding: 40;">
             
             <VBox spacing="5">
-                <Text text="My Applications" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
-                <Text text="(from offices loesilstare)" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
+                <Text text="Mes Candidatures" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+                <Text text="(Candidatures soumises aux demandes)" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
             </VBox>
             
             <!-- Card avec liste des candidatures -->
@@ -38,7 +38,7 @@
                       style="-fx-padding: 20; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1 0;">
                     <VBox spacing="8" HBox.hgrow="ALWAYS">
                         <Text text="Récolte de Pommes de Terre" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-                        <Text text="Naoe demande" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
+                        <Text text="Nouvelle demande" style="-fx-fill: #757575; -fx-font-size: 14px;"/>
                     </VBox>
                     <VBox spacing="5" alignment="CENTER_RIGHT">
                         <Label text="EN ATTENTE" styleClass="badge badge-pending"/>

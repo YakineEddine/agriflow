@@ -62,7 +62,7 @@
                       style="-fx-padding: 15; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1 0;">
                     <VBox spacing="5" HBox.hgrow="ALWAYS">
                         <Text text="Récolte de Tomates" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-                        <Text text="Ali Beni Ahmed" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
+                        <Text text="Ali Ben Ahmed" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
                     </VBox>
                     <Label text="PENDING" styleClass="badge badge-pending" prefWidth="120"/>
                     <Text text="22/12/2025" prefWidth="120" style="-fx-font-size: 14px;"/>
@@ -111,7 +111,7 @@
                 <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-padding: 15;">
                     <VBox spacing="5" HBox.hgrow="ALWAYS">
                         <Text text="Récolte de Tomates" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-                        <Text text="Ahseu Omzer" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
+                        <Text text="Mohamed Saidi" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
                     </VBox>
                     <Label text="PENDING" styleClass="badge badge-pending" prefWidth="120"/>
                     <Text text="31/01/2025" prefWidth="120" style="-fx-font-size: 14px;"/>

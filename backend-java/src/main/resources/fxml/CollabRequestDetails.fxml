@@ -67,8 +67,8 @@
                         </VBox>
                         
                         <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <Text text="Taux" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
-                            <Text text="⭐ 12 DT/jour" 
+                            <Text text="Expérience" style="-fx-fill: #757575; -fx-font-size: 12px;"/>
+                            <Text text="⭐ Expérience requise" 
                                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
                         </VBox>
                         
