@@ -191,4 +191,79 @@ public class CollabApplicationService {
         app.setStatus(rs.getString("status"));
         return app;
     }
+    /**
+     * Compte le nombre de candidatures pour une demande
+     */
+    public int countApplicationsByRequestId(Long requestId) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM collab_applications WHERE request_id = ?";
+        try (Connection c = MyDatabase.getInstance().getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setLong(1, requestId);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+            return 0;
+        }
+    }
+
+    /**
+     * Récupère toutes les candidatures pour une demande
+     */
+    public List<CollabApplication> getApplicationsByRequestId(Long requestId) throws SQLException {
+        List<CollabApplication> applications = new ArrayList<>();
+        String sql = "SELECT * FROM collab_applications WHERE request_id = ? ORDER BY applied_at DESC";
+
+        try (Connection c = MyDatabase.getInstance().getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setLong(1, requestId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                CollabApplication app = new CollabApplication();
+                app.setId(rs.getLong("id"));
+                app.setRequestId(rs.getLong("request_id"));
+                app.setCandidateId(rs.getLong("candidate_id"));
+                app.setFullName(rs.getString("full_name"));
+                app.setPhone(rs.getString("phone"));
+                app.setEmail(rs.getString("email"));
+                app.setYearsOfExperience(rs.getInt("years_of_experience"));
+                app.setMotivation(rs.getString("motivation"));
+                app.setExpectedSalary(rs.getDouble("expected_salary"));
+                app.setStatus(rs.getString("status"));
+                applications.add(app);
+            }
+        }
+        return applications;
+    }
+
+    /**
+     * Approuve une candidature
+     */
+    public void approveApplication(Long applicationId) throws SQLException {
+        String sql = "UPDATE collab_applications SET status = 'APPROVED', updated_at = CURRENT_TIMESTAMP WHERE id = ?";
+        try (Connection c = MyDatabase.getInstance().getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setLong(1, applicationId);
+            int rows = ps.executeUpdate();
+            if (rows > 0) {
+                System.out.println("✅ Candidature approuvée : ID " + applicationId);
+            }
+        }
+    }
+
+    /**
+     * Rejette une candidature
+     */
+    public void rejectApplication(Long applicationId) throws SQLException {
+        String sql = "UPDATE collab_applications SET status = 'REJECTED', updated_at = CURRENT_TIMESTAMP WHERE id = ?";
+        try (Connection c = MyDatabase.getInstance().getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setLong(1, applicationId);
+            int rows = ps.executeUpdate();
+            if (rows > 0) {
+                System.out.println("❌ Candidature rejetée : ID " + applicationId);
+            }
+        }
+    }
 }

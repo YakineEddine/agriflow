@@ -82,6 +82,9 @@ public class MainFX extends Application {
             e.printStackTrace();
         }
     }
+    public static void showCollabRequestDetails(Long requestId) {
+        loadView("/fxml/CollabRequestDetails.fxml", "Détails de la demande");
+    }
     /**
      * Affiche le formulaire de publication
      */
@@ -96,6 +99,12 @@ public class MainFX extends Application {
         loadView("/fxml/MyRequests.fxml", "Mes demandes");
     }
 
+    /**
+     * Affiche la vue des candidatures reçues pour une demande
+     */
+    public static void showViewApplications() {
+        loadView("/fxml/ViewApplications.fxml", "Candidatures reçues");
+    }
     /**
      * Affiche mes candidatures
      */
